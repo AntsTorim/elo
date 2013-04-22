@@ -1,0 +1,12 @@
+class WarELO:
+
+    def __init__(self, ELO1, ELO2, brute_force = 0, prev_games = 0):
+        self.ELO1 = ELO1
+        self.ELO2 = ELO2
+        self.brute_force = brute_force
+        self.prev_games = prev_games
+
+
+    def change(self, result = 0.5, activity=1.0, k=32):
+        return k * (result - 1 / ( 1 + 10**((self.ELO2-self.ELO1)/400))
+
